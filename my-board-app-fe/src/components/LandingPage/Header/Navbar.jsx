@@ -1,40 +1,41 @@
 import React from 'react';
 import MyBoardLogo from '/Users/mac/Desktop/myboard_fe/my-board-app-fe/src/assets/images/my-board-logo.png';
+import { Link } from 'react-router-dom';
 
 export const Navbar = () => {
   return (
-    <nav className="sticky top-0 z-50 shadow-md bg-white py-3 px-14 w-full">
+    <nav className="sticky top-0 z-50 shadow-lg bg-white w-full m-[0_0.3rem_6.6rem_0] p-[0.9rem_4.4rem_0.9rem_4.6rem]">
       <div className="flex justify-between items-center">
         <div className="flex items-center">
-          <a href="/" className="mr-2">
+          <Link to="/" className="mr-2">
             <img src={MyBoardLogo} alt="My Board Logo" className="w-9 h-8" />
-          </a>
-          <a href="/" className="font-semibold text-xl text-black">
+          </Link>
+          <Link to="/" className="font-product-sans font-normal text-xl text-black">
             My Board
-          </a>
+          </Link>
         </div>
         <ul className="flex items-center">
           <li className="mx-4">
-            <a href="/" className="text-md text-black hover:text-blue-700">
+            <Link to="/" className="text-md text-black hover:text-blue-700">
               Home
-            </a>
+            </Link>
           </li>
           <li className="mx-4">
-            <a href="/" className="text-md text-black hover:text-blue-700">
+            <Link to="/" className="text-md text-black hover:text-blue-700">
               About Us
-            </a>
+            </Link>
           </li>
           <li className="mx-4">
-            <a href="/" className="text-md text-black hover:text-blue-700">
+            <Link to="/" className="text-md text-black hover:text-blue-700">
               Services
-            </a>
+            </Link>
           </li>
-          <a href="/" className="mr-4 px-6 py-2 border border-blue-700 text-blue-700 hover:bg-blue-600 hover:text-white rounded-md transition-colors">
+          <Link to="/" className="mr-4 px-6 py-2 border border-blue-700 text-blue-700 hover:bg-blue-600 hover:text-white rounded-md transition-colors">
             Log In
-          </a>
-          <a href="/" className="px-6 py-2 bg-blue-700 text-white hover:bg-blue-600 rounded-md transition-colors">
+          </Link>
+          <Link to="/" className="px-6 py-2 bg-blue-700 text-white hover:bg-blue-600 rounded-md transition-colors">
             Sign Up
-          </a>
+          </Link>
         </ul>
       </div>
     </nav>

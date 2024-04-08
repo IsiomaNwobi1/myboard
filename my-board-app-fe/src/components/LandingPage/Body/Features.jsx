@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+
 
 export const Features = () => {
   return (
-    <div className="m-[0_3.4rem_5.2rem_5.8rem] flex flex-col items-center w-[fit-content] box-sizing-border">
-    <div className="m-[0_0_4.3rem_0] flex flex-col items-center w-[fit-content] box-sizing-border">
+    <div className="m-[0_3.4rem_0rem_5.8rem] flex flex-col items-center w-[fit-content] box-sizing-border">
+    <div className="m-[0_0_0rem_0] flex flex-col items-center w-[fit-content] box-sizing-border">
       <div className="m-[0_0_3rem_0] flex flex-row w-[fit-content] box-sizing-border">
         
         <div className="m-[4.8rem_4.3rem_4.8rem_0] flex flex-col box-sizing-border">
@@ -17,11 +19,11 @@ export const Features = () => {
             </p>
           </div>
           
-          <a href='/' className="mt-[20px] rounded-[0.3rem] bg-[#175CD3] flex flex-row justify-center self-start p-[0.9rem_0rem_0.9rem_0] w-[11.6rem] box-sizing-border hover:bg-blue-600 hover:border-blue-600">
+          <Link to='/' className="mt-[20px] rounded-[0.3rem] bg-[#175CD3] flex flex-row justify-center self-start p-[0.9rem_0rem_0.9rem_0] w-[11.6rem] box-sizing-border hover:bg-blue-600 hover:border-blue-600">
             <p className="break-words font-['Inter'] font-medium text-[1rem] leading-[1.75] text-[var(--white-1,#FFFFFF)]">
               Learn More
             </p>
-          </a>
+          </Link>
         
         </div>
         

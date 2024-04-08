@@ -9,6 +9,10 @@ function App() {
     {
       path:"/",
       element:<LandingPage/>
+    },
+    {
+      path:"/",
+      element:<LandingPage/>
     }
   ]);
 
@@ -17,7 +21,6 @@ function App() {
       <div className='App'>
         <RouterProvider router={router}/>
       </div>
-
     </div>
   )
 }
