@@ -1,9 +1,10 @@
-import React from 'react'
-import List from '/Users/decagon/myboard_fe/myboard_fe/my-board-app-fe/src/assets/images/list-ul.png'
-import background from '/Users/decagon/myboard_fe/myboard_fe/my-board-app-fe/src/assets/images/Background.png'
-import sublist from '/Users/decagon/myboard_fe/myboard_fe/my-board-app-fe/src/assets/images/Sub List 1.png'
-import add from '/Users/decagon/myboard_fe/myboard_fe/my-board-app-fe/src/assets/images/add.png'
-import Dot from '/Users/decagon/myboard_fe/myboard_fe/my-board-app-fe/src/assets/images/Dot.png'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import List from '/Users/decagon/myboard_fe/myboard_fe/my-board-app-fe/src/assets/images/list-ul.png';
+import background from '/Users/decagon/myboard_fe/myboard_fe/my-board-app-fe/src/assets/images/Background.png';
+import sublist from '/Users/decagon/myboard_fe/myboard_fe/my-board-app-fe/src/assets/images/Sub List 1.png';
+import add from '/Users/decagon/myboard_fe/myboard_fe/my-board-app-fe/src/assets/images/add.png';
+import Dot from '/Users/decagon/myboard_fe/myboard_fe/my-board-app-fe/src/assets/images/Dot.png';
 
 const Header = () => {
   return (
@@ -12,7 +13,7 @@ const Header = () => {
         <div className='flex justify-between h-8 pr-[4rem]  pt-6'>
           <div className='flex '>
             <img src={List} alt="" className='w-[2rem] h-[1.7rem]'/>
-            <a href='/' className=" text-white font-lato  text-xl leading-tight">Post</a>
+            <Link to='/dashboard' className=" text-white font-lato  text-xl leading-tight">Post</Link>
           </div>
           <div className='flex  gap-3 mr-[2rem]'>
             <h4 className=' mt-1.5 text-white font-lato text-xl  leading-tight'>Hey, Chisom</h4>
@@ -31,4 +32,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header;
