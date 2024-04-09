@@ -1,5 +1,5 @@
 import React from 'react';
-import MyBoardLogo from '/Users/mac/Desktop/myboard_fe/my-board-app-fe/src/assets/images/my-board-logo.png';
+import MyBoardLogo from '../../../assets/images/my-board-logo.png';
 import { Link } from 'react-router-dom';
 
 export const Navbar = () => {

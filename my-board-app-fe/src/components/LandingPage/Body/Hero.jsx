@@ -1,5 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Image1 from '../../../assets/images/Rectangle60.png'
+import Image2 from '../../../assets/images/Rectangle61.png'
+import Image3 from '../../../assets/images/Rectangle62.png'
+import Image4 from '../../../assets/images/Rectangle63.png'
+import Image5 from '../../../assets/images/Rectangle64.png'
+import Image6 from '../../../assets/images/Rectangle65.png'
 
 export const Hero = () => {
   return (
@@ -21,17 +27,23 @@ export const Hero = () => {
       </Link>
     </div>
     <div className="flex flex-row w-[80.9rem] box-sizing-border">
-      <div className="rounded-[6.3rem] bg-no-repeat bg-[center_right_46%] bg-cover bg-[url('/Users/mac/Desktop/myboard_fe/my-board-app-fe/src/assets/images/Rectangle60.png')] m-[0.7rem_1.5rem_0.5rem_0] w-[11.9rem] h-[37.8rem]">
+      <div className="rounded-[6.3rem] bg-no-repeat bg-[center_right_46%] bg-cover m-[0.7rem_1.5rem_0.5rem_0] w-[11.9rem] h-[37.8rem]">
+        <img src={Image1} alt='' className="rounded-[6.3rem] object-cover object-position-[60%_cener] w-full h-full "/>
       </div>
-      <div className="rounded-[6.3rem] bg-no-repeat bg-[center_right_70%] bg-cover bg-[url('/Users/mac/Desktop/myboard_fe/my-board-app-fe/src/assets/images/Rectangle61.png')] m-[3.8rem_2.2rem_2.6rem_0] w-[11.9rem] h-[32.6rem]">
+      <div className="rounded-[6.3rem] bg-no-repeat bg-[center_right_70%] bg-cover m-[3.8rem_2.2rem_2.6rem_0] w-[11.9rem] h-[32.6rem]">
+        <img src={Image2} alt='' className="rounded-[6.3rem] object-cover w-full h-full"/>
       </div>
-      <div className="rounded-[6.3rem] bg-no-repeat bg-[center_right_50%] bg-cover bg-[url('/Users/mac/Desktop/myboard_fe/my-board-app-fe/src/assets/images/Rectangle62.png')] m-[0_1.8rem_4.3rem_0] w-[11.9rem] h-[34.7rem]">
+      <div className="rounded-[6.3rem] bg-no-repeat bg-[center_right_50%] bg-cover m-[0_1.8rem_4.3rem_0] w-[11.9rem] h-[34.7rem]">
+        <img src={Image3} alt='' className="rounded-[6.3rem] object-cover w-full h-full"/>
       </div>
-      <div className="rounded-[6.3rem] bg-no-repeat bg-[center_right_70%] bg-cover bg-[url('/Users/mac/Desktop/myboard_fe/my-board-app-fe/src/assets/images/Rectangle63.png')] m-[4.3rem_2rem_0_0] w-[11.9rem] h-[34.7rem]">
+      <div className="rounded-[6.3rem] bg-no-repeat bg-[center_right_70%] bg-cover m-[4.3rem_2rem_0_0] w-[11.9rem] h-[34.7rem]">
+        <img src={Image4} alt='' className="rounded-[6.3rem] object-cover w-full h-full"/>
       </div>
-      <div className="rounded-[6.3rem] bg-no-repeat bg-[center_right_65%] bg-cover bg-[url('/Users/mac/Desktop/myboard_fe/my-board-app-fe/src/assets/images/Rectangle64.png')] m-[0_1.8rem_4.3rem_0] w-[11.9rem] h-[34.7rem]">
+      <div className="rounded-[6.3rem] bg-no-repeat bg-[center_right_65%] bg-cover m-[0_1.8rem_4.3rem_0] w-[11.9rem] h-[34.7rem]">
+        <img src={Image5} alt='' className="rounded-[6.3rem] object-cover w-full h-full"/>
       </div>
-      <div className="rounded-[6.3rem] bg-no-repeat bg-[center_right_50%] bg-cover bg-[url('/Users/mac/Desktop/myboard_fe/my-board-app-fe/src/assets/images/Rectangle65.png')] m-[3.8rem_0_0.5rem_0] w-[11.9rem] h-[34.7rem]">
+      <div className="rounded-[6.3rem] bg-no-repeat bg-[center_right_50%] bg-cover m-[3.8rem_0_0.5rem_0] w-[11.9rem] h-[34.7rem]">
+        <img src={Image6} alt='' className="rounded-[6.3rem] object-cover w-full h-full"/>
       </div>
     </div>
   </div>

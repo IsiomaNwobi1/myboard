@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Image1 from '../../../assets/images/Rectangle81.png';
+import Image2 from '../../../assets/images/Rectangle8.png';
 
 
 export const Features = () => {
@@ -31,7 +33,8 @@ export const Features = () => {
           <div className="rounded-[0.3rem] bg-[#175CD3] relative w-[34.9rem] h-[21.5rem]">
           </div>
           
-          <div className="rounded-[0.3rem] bg-[url('/Users/mac/Desktop/myboard_fe/my-board-app-fe/src/assets/images/Rectangle81.png')] absolute left-[0rem] right-[3.3rem] bottom-[0rem] h-[21.5rem]">
+          <div className="rounded-[0.3rem] absolute left-[0rem] right-[3.3rem] bottom-[0rem] h-[21.5rem]">
+          <img src={Image1} alt='' className='rounded-[0.3rem]'/>
           </div>
         </div>
       
@@ -41,7 +44,8 @@ export const Features = () => {
         <div className="rounded-[0.3rem] relative m-[0_1.4rem_0_0] flex flex-row justify-center p-[0_2.5rem_2.4rem_0] w-[39.9rem] h-[23.8rem] box-sizing-border">
           <div className="rounded-[0.3rem] bg-[#175CD3] relative w-[37.4rem] h-[21.4rem]">
           </div>
-          <div className="rounded-[0.3rem] bg-[url('/Users/mac/Desktop/myboard_fe/my-board-app-fe/src/assets/images/Rectangle8.png')] absolute left-[2.5rem] right-[0rem] bottom-[0rem] h-[21.4rem]">
+          <div className="rounded-[0.3rem] absolute left-[2.5rem] right-[0rem] bottom-[0rem] h-[21.4rem]">
+            <img src={Image2} alt='' className='rounded-[0.3rem]'/>
           </div>
         </div>
         

@@ -11,7 +11,7 @@ function App() {
       element:<LandingPage/>
     },
     {
-      path:"/",
+      path:"/home",
       element:<LandingPage/>
     }
   ]);

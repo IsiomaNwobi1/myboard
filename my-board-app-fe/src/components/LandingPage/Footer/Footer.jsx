@@ -1,5 +1,5 @@
 import React from 'react'
-import MyBoardBlack from '/Users/mac/Desktop/myboard_fe/my-board-app-fe/src/assets/images/Black_Logo.png'
+import MyBoardBlack from '../../../assets/images/Black_Logo.png'
 import { Link } from 'react-router-dom';
 
 export const Footer = () => {
