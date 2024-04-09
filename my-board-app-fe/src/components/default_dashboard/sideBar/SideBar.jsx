@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '/Users/decagon/myboard_fe/myboard_fe/my-board-app-fe/src/assets/add_task.png';
-import List from '/Users/decagon/myboard_fe/myboard_fe/my-board-app-fe/src/assets/images/list-ul.png';
-import Icon from '/Users/decagon/myboard_fe/myboard_fe/my-board-app-fe/src/assets/images/Icon.png';
-import vector from '/Users/decagon/myboard_fe/myboard_fe/my-board-app-fe/src/assets/images/Vector.png';
-import Delete from '/Users/decagon/myboard_fe/myboard_fe/my-board-app-fe/src/assets/images/Delete.png';
-import Logout from '/Users/decagon/myboard_fe/myboard_fe/my-board-app-fe/src/assets/images/logout.png';
+import logo from '../../../assets/images/add_task.png';
+import List from '../../../assets/images/list-ul.png';
+import Icon from '../../../assets/images/Icon.png';
+import vector from '../../../assets/images/Vector.png';
+import Delete from '../../../assets/images/Delete.png';
+import Logout from '../../../assets/images/logout.png';
 
 const SideBar = () => {
   return (
