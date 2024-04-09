@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import List from '/Users/decagon/myboard_fe/myboard_fe/my-board-app-fe/src/assets/images/list-ul.png';
-import background from '/Users/decagon/myboard_fe/myboard_fe/my-board-app-fe/src/assets/images/Background.png';
-import sublist from '/Users/decagon/myboard_fe/myboard_fe/my-board-app-fe/src/assets/images/Sub List 1.png';
-import add from '/Users/decagon/myboard_fe/myboard_fe/my-board-app-fe/src/assets/images/add.png';
-import Dot from '/Users/decagon/myboard_fe/myboard_fe/my-board-app-fe/src/assets/images/Dot.png';
+import List from '../../../assets/images/list-ul.png';
+import background from '../../../assets/images/Background.png';
+import sublist from '../../../assets/images/Sub List 1.png';
+import add from '../../../assets/images/add.png';
+import Dot from '../../../assets/images/Dot.png';
 
 const Header = () => {
   return (

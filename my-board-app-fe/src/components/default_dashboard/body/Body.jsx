@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import image from '/Users/decagon/myboard_fe/myboard_fe/my-board-app-fe/src/assets/images/image 2.png';
-import image1 from '/Users/decagon/myboard_fe/myboard_fe/my-board-app-fe/src/assets/images/add1.png';
+import image1 from '../../../assets/images/add1.png';
+import image from '../../../assets/images/img2.png';
 
 const Body = () => (
   <div className='pt-[13rem] w-[1215px]'>
