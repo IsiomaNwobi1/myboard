@@ -33,7 +33,7 @@ export const RightSection = () => {
     </div>
 
 
-       
+       <p className='mt-[15px] text-blue-700 underline underline-offset-4 '><Link to = '/initiate-reset-password'>Forgot Password?</Link></p>
     
 
         <div className="m-[30px_6px_6px_50px] flex flex-row justify-between w-[476px] box-sizing-border">
