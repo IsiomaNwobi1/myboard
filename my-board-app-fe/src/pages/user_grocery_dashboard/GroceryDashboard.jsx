@@ -1,12 +1,12 @@
-import Header from '../../components/default_dashboard/header/Header';
-import SideBar from '../../components/default_dashboard/sideBar/SideBar';
-import Body from '../../components/default_dashboard/body/Body';
 import Form from '../../components/populated_dashboard/form/Form';
 import Modal from '../../components/Modal';
 import { useState } from 'react';
 import Menu from '../../components/populated_dashboard/menu/Menu';
+import GrocerySideBar from '../../components/groceries_dashboard/GrocerySideBar';
+import GroceryHeader from '../../components/groceries_dashboard/GroceryHeader';
+import GroceryBody from '../../components/groceries_dashboard/GroceryBody';
 
-const Dashboard = () => {
+const GroceryDashboard = () => {
   const [showForm, setShowForm] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
@@ -22,9 +22,9 @@ const Dashboard = () => {
     <section className="dashboard-container">
       {showMenu && <Menu toggleMenuModal={ToggleMenuModal}/>}
       <div className="flex">
-         <SideBar />
-         <Header toggleMenuModal={ToggleMenuModal} />
-         <Body hideModal={ToggleFormModal} />
+         <GrocerySideBar />
+         <GroceryHeader toggleMenuModal={ToggleMenuModal} />
+         <GroceryBody hideModal={ToggleFormModal} />
         </div>
         {showForm && <Modal children={<Form hideModal={ToggleFormModal} />} />}
     </section>
@@ -34,4 +34,4 @@ const Dashboard = () => {
 
 
 
-export default Dashboard;
+export default GroceryDashboard;
