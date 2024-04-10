@@ -21,7 +21,10 @@ const GroceryHeader = ({toggleMenuModal}) => {
           </div>
         </div>
         <div className='flex justify-between mt-12 pr-[4rem] '>
-          <img className='w-[50px] h-[50px]' src={sublist} alt="" />
+            <div className='flex gap-4 active:underline-offset-8 underline-offset-8'>
+                <Link to='' className='underline h-[50px] text-white text-[30px] font-lato'>Groceries</Link>
+                <Link to='' className='h-[50px] text-white text-[30px] '>Cooking Class</Link>
+            </div>
           <div className='flex gap-2 h-8 mr-[2rem] '>
             <img src={add} alt="" className='w-8'/>
             <button  onClick={toggleMenuModal}><img src={Dot} alt="" /></button>
