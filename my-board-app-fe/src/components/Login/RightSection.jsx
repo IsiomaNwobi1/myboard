@@ -3,6 +3,7 @@ import Logo from '../../assets/images/my-board-logo.png';
 import Google from '../../assets/images/Google.png';
 import 'react-phone-number-input/style.css';
 import { Link } from 'react-router-dom';
+import './style.css';
 
 
 export const RightSection = () => {
@@ -31,6 +32,8 @@ export const RightSection = () => {
     <input className='border bottom-3 rounded w-full mt-3' placeholder='**********' type='password'/>
     </div>
 
+
+       
     
 
         <div className="m-[30px_6px_6px_50px] flex flex-row justify-between w-[476px] box-sizing-border">
@@ -55,7 +58,8 @@ export const RightSection = () => {
     </div>
 
     <div className='flex items-center  justify-center mt-2 mb-2'>
-        <button className="buttoun w-full text-[#FCFCFD]">LOG IN</button>
+        <button className="buttoun w-full text-[#FCFCFD]"><Link to='/dashboard'>LOG IN</Link></button>
+      
     </div>
     <p className='flex items-center  justify-center text-[#98A2B3]'>Don't have an Account ?<span className='text-[#175CD3] m-2'><Link to='/signup' >Sign up here</Link></span></p>
         

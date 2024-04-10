@@ -11,7 +11,7 @@ export const RightSection = () => {
     const [value, setValue] = useState();
 
   return (
-    <div className='py-2 px-20'>
+    <div className='py-10 px-20'>
         <div className='flex items-center justify-center'>
             <img src={Logo} alt='logo'/>
             <p className='px-3 text-[#175CD3] text-[25px]'>My Board</p>

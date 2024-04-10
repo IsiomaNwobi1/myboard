@@ -4,7 +4,7 @@ import { LeftSection } from '../components/Login/LeftSection'
 
 export const LoginPage = () => {
   return (
-    <div className='grid grid-cols-2 w-full fixed'>
+    <div className='grid grid-cols-2 w-full '>
         <LeftSection />
         <RightSection />
     </div>
