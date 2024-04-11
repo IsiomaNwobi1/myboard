@@ -10,7 +10,7 @@ import Logout from '../../assets/images/logout.png';
 const GrocerySideBar = () => {
   return (
   <div className='w-[15%]'>
-      <div className=' bg-[#175CD3]   h-full overflow-y-auto'>
+      <div className=' bg-[#175CD3]   h-[825px] overflow-y-auto'>
         <div className='flex gap-3 pt-8 pl-10'>
           <img className='w-[40] h-[40]' src={logo} alt="" />
           <h1 className='font-sans font-normal text-xl leading-7 text-white'>My Board</h1>

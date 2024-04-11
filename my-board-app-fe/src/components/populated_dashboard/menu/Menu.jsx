@@ -2,6 +2,7 @@ import React from 'react';
 import Edit from '../../../assets/images/edit.png';
 import Check from '../../../assets/images/check_box.png';
 import CancelX from '../../../assets/images/cancel.png';
+import Clear from '../../../assets/images/clear.svg';
 import {Link} from 'react-router-dom'
 
 const Menu = ({toggleMenuModal}) => {
@@ -11,7 +12,7 @@ const Menu = ({toggleMenuModal}) => {
           <div className='flex gap-6  text-black ml-3'>
             <img src={Edit} alt="" className='w-[22px] h-[18px] mt-3' />
             <Link to='/dashboard' className='mt-2'>Edit Sub List</Link>
-            <p onClick={toggleMenuModal} className='text-end text-black mr-3'>x</p>
+            <img onClick={toggleMenuModal} className='text-end text-black m-[1_0_0_0]' src={Clear}/>
           </div>
           <div className='flex gap-6  text-black mt-[0.75rem]  ml-2'>
             <img src={Check} alt="" className='w-[22px] h-[22px] ' />

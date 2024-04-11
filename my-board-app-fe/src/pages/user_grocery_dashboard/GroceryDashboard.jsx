@@ -1,3 +1,4 @@
+
 import Form from '../../components/populated_dashboard/form/Form';
 import Modal from '../../components/Modal';
 import { useState } from 'react';
@@ -5,6 +6,7 @@ import Menu from '../../components/populated_dashboard/menu/Menu';
 import GrocerySideBar from '../../components/groceries_dashboard/GrocerySideBar';
 import GroceryHeader from '../../components/groceries_dashboard/GroceryHeader';
 import GroceryBody from '../../components/groceries_dashboard/GroceryBody';
+import { Outlet } from 'react-router-dom';
 
 const GroceryDashboard = () => {
   const [showForm, setShowForm] = useState(false);
@@ -24,7 +26,7 @@ const GroceryDashboard = () => {
       <div className="flex">
          <GrocerySideBar />
          <GroceryHeader toggleMenuModal={ToggleMenuModal} />
-         <GroceryBody hideModal={ToggleFormModal} />
+         <GroceryBody hideModal={ToggleFormModal}/>
         </div>
         {showForm && <Modal children={<Form hideModal={ToggleFormModal} />} />}
     </section>

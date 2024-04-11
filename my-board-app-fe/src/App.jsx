@@ -6,6 +6,7 @@ import Dashboard from '../src/pages/user_default_dashboard/Dashboard';
 import Form from './components/populated_dashboard/form/Form';
 import Menu from './components/populated_dashboard/menu/Menu';
 import GroceryDashboard  from './pages/user_grocery_dashboard/GroceryDashboard';
+import GroceryBody from './components/groceries_dashboard/GroceryBody';
 import { SignupPage } from './pages/SignupPage'
 import {LoginPage} from './pages/LoginPage'
 
@@ -44,7 +45,21 @@ function App() {
     },
     {
       path:"/grocerydashboard",
-      element:<GroceryDashboard/>
+      element:<GroceryDashboard/>,
+      children: [
+        {
+          path: "",
+          element:<GroceryBody/>,
+        },
+        {
+        path: "groceries",
+        element:<GroceryBody/>,
+      },
+      {
+        path: "cooking",
+        element:<GroceryBody/>,
+      }
+    ]
     }
 
   ]);
