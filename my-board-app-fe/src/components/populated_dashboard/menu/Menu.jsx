@@ -7,20 +7,20 @@ import {Link} from 'react-router-dom'
 
 const Menu = ({toggleMenuModal}) => {
   return (
-    <div className='fixed top-[10] left-[50] w-[100%] flex justify-center items-center h-[100vh] z-[3] bg-[#00000089]'>
+    <div className='fixed top-[10] left-[50] w-[100%] flex justify-center items-center h-[100vh] z-[3] bg-[#0000004d]'>
         <div className=' w-[200px] h-[120px] p-[7px 20px 7px 0px] gap-[10px] bg-[#FFFFFF] ml-8 rounded-xl text-[#175CD3]'>
           <div className='flex gap-6  text-black ml-3'>
-            <img src={Edit} alt="" className='w-[22px] h-[18px] mt-3' />
-            <Link to='/dashboard' className='mt-2'>Edit Sub List</Link>
+            <img src={Edit} alt="" className='w-[24px] h-[24px] mt-2' />
+            <Link to='/grocerydashboard' className='mt-2'>Edit Sub List</Link>
             <img onClick={toggleMenuModal} className='text-end text-black m-[1_0_0_0]' src={Clear}/>
           </div>
           <div className='flex gap-6  text-black mt-[0.75rem]  ml-2'>
-            <img src={Check} alt="" className='w-[22px] h-[22px] ' />
-            <Link to='/dashboard'>Complete All</Link>
+            <img src={Check} alt="" className='w-[24px] h-[24px] ' />
+            <Link to='/grocerydashboard'>Complete All</Link>
           </div>
           <div className='flex gap-6  text-black mt-[0.75rem]  ml-2'>
-            <img src={CancelX} alt="" className='w-[20px] h-[22px]' />
-            <Link to='/dashboard'>Delete Sub Task</Link>
+            <img src={CancelX} alt="" className='w-[22px] h-[24px]' />
+            <Link to='/grocerydashboard'>Delete Sub Task</Link>
           </div>
         </div>
     </div>

@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import List from '../../assets/images/list-ul.png';
 import background from '../../assets/images/Background.png';
-import sublist from '../../assets/images/Sub List 1.png';
 import add from '../../assets/images/add.png';
 import Dot from '../../assets/images/Dot.png';
 

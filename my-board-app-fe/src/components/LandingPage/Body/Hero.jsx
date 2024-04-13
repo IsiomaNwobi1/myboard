@@ -28,7 +28,7 @@ export const Hero = () => {
         <p className="text-[1rem] font-normal leading-[1.75] text-gray-500 text-center break-words">
           Break Up With Inefficient Workflows - Our App Will Treat You Better, Wave Goodbye to Task Stress, a Simpler System Awaits, Two Heads Get More Done Than One - Let's Team Up<br />
         </p>
-        <Link to="/" className="mt-4 rounded-md bg-[#175CD3] hover:bg-blue-600 flex justify-center items-center p-[0.9rem] w-[22.2rem] text-white">
+        <Link to="/login" className="mt-4 rounded-md bg-[#175CD3] hover:bg-blue-600 flex justify-center items-center p-[0.9rem] w-[22.2rem] text-white">
           Get Started
         </Link>
       </div>

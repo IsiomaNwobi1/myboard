@@ -7,16 +7,16 @@ import Flag from '../../../assets/images/flag.png';
 import Status from '../../../assets/images/Icon-3.png';
 import Close from '../../../assets/images/close.png';
 
-const Form = ({ hideModal }) => {
+const Form = ({ hideModal}) => {
     return (
-        <form action="" className='flex justify-center '>
-            <div className="  w-[550px]  mt-[20px] ">
+        <form action="" className='flex justify-center fixed top-[10] left-[50] w-[100%] items-center h-[100vh] z-[3] bg-[#00000036]'>
+            <div className=" w-[550px]  mt-[50px]">
 
-                <div className='bg-[#175CD3] h-[87px] pt-[1.5px] rounded-t-[10px]'>
+                <div className='bg-[#175CD3] h-[87px] pt-[1.5px] rounded-t-[10px] '>
 
                     <div className='flex justify-between px-3'>
-                        <h2 className='text-white text-lg font-semibold mt-2 mb-2 ml-4'>Task Name</h2>
-                        <img src={Close} alt="" onClick={hideModal} className='w-[25px] h-[25px]'/>
+                        <h2 className='text-white text-lg font-semibold mt-2 mb-2 ml-1'>Task Name</h2>
+                        <img src={Close} alt="" onClick={hideModal} className='w-[25px] h-[25px] mt-1'/>
                     </div>
                     <div>
                         <p className='text-white pb-2 ml-4'>My Shopping</p>

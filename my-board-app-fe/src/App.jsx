@@ -7,8 +7,10 @@ import Form from './components/populated_dashboard/form/Form';
 import Menu from './components/populated_dashboard/menu/Menu';
 import GroceryDashboard  from './pages/user_grocery_dashboard/GroceryDashboard';
 import GroceryBody from './components/groceries_dashboard/GroceryBody';
+import TasksTab1Body from './components/groceries_dashboard/TasksTab1Body';
 import { SignupPage } from './pages/SignupPage'
 import {LoginPage} from './pages/LoginPage'
+import EditMenu from './components/populated_dashboard/edit_menu/EditMenu';
 
 
 
@@ -44,6 +46,11 @@ function App() {
       element:<Menu/>
     },
     {
+      path: "/edit-menu",
+      element:<EditMenu/>
+    },
+
+    {
       path:"/grocerydashboard",
       element:<GroceryDashboard/>,
       children: [
@@ -57,7 +64,7 @@ function App() {
       },
       {
         path: "cooking",
-        element:<GroceryBody/>,
+        element:<TasksTab1Body/>,
       }
     ]
     }

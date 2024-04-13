@@ -30,10 +30,10 @@ export const Navbar = () => {
               Services
             </Link>
           </li>
-          <Link to="/" className="mr-4 px-6 py-2 border border-blue-700 text-blue-700 hover:bg-blue-600 hover:text-white rounded-md transition-colors">
+          <Link to="/login" className="mr-4 px-6 py-2 border border-blue-700 text-blue-700 hover:bg-blue-600 hover:text-white rounded-md transition-colors">
             Log In
           </Link>
-          <Link to="/" className="px-6 py-2 bg-blue-700 text-white hover:bg-blue-600 rounded-md transition-colors">
+          <Link to="/signup" className="px-6 py-2 bg-blue-700 text-white hover:bg-blue-600 rounded-md transition-colors">
             Sign Up
           </Link>
         </ul>
