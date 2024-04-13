@@ -5,6 +5,8 @@ import { LandingPage } from './pages/LandingPage';
 import Dashboard from '../src/pages/user_default_dashboard/Dashboard';
 import { SignupPage } from './pages/SignupPage'
 import {LoginPage} from './pages/LoginPage'
+import InitiateRestPage from './pages/InitiateRestPage';
+import ResetPage from './pages/ResetPage';
 
 
 function App() {
@@ -29,6 +31,14 @@ function App() {
     {
       path:"/login",
       element: <LoginPage />
+    },
+    {
+      path:"/initiate-reset-password",
+      element: <InitiateRestPage />
+    },
+    {
+      path:"/reset-password",
+      element: <ResetPage />
     }
   ]);
 
