@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/images/add_task.png';
 import List from '../../../assets/images/list-ul.png';
@@ -9,8 +8,8 @@ import Logout from '../../../assets/images/logout.png';
 
 const SideBar = () => {
   return (
-  <div className='w-[15%]'>
-      <div className=' bg-[#175CD3]   h-full overflow-y-auto'>
+  <div className='w-[225px]'>
+      <div className=' bg-[#175CD3]   h-screen overflow-y-auto'>
         <div className='flex gap-3 pt-8 pl-10'>
           <img className='w-[40] h-[40]' src={logo} alt="" />
           <h1 className='font-sans font-normal text-xl leading-7 text-white'>My Board</h1>

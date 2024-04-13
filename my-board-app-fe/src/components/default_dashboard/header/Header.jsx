@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 import List from '../../../assets/images/list-ul.png';
 import background from '../../../assets/images/Background.png';
