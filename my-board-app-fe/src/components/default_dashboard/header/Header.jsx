@@ -6,7 +6,7 @@ import sublist from '../../../assets/images/Sub List 1.png';
 import add from '../../../assets/images/add.png';
 import Dot from '../../../assets/images/Dot.png';
 
-const Header = () => {
+const Header = ({toggleMenuModal}) => {
   return (
     <header>
       <nav className=' absolute z-0 w-[85%] ml-[225] bg-[#175CD3] h-[134px] '>
@@ -24,7 +24,7 @@ const Header = () => {
           <img className='w-[50px] h-[50px]' src={sublist} alt="" />
           <div className='flex gap-2 h-8 mr-[2rem] '>
             <img src={add} alt="" className='w-8'/>
-            <img src={Dot} alt="" />
+            <button  onClick={toggleMenuModal}><img src={Dot} alt="" /></button>
           </div>
         </div>
       </nav>
