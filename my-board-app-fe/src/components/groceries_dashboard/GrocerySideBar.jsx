@@ -1,14 +1,15 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../../assets/images/add_task.png';
-import List from '../../../assets/images/list-ul.png';
-import Icon from '../../../assets/images/Icon.png';
-import vector from '../../../assets/images/Vector.png';
-import Delete from '../../../assets/images/Delete.png';
-import Logout from '../../../assets/images/logout.png';
+import logo from '../../assets/images/add_task.png'
+import List from '../../assets/images/list-ul.png';
+import Icon from '../../assets/images/Icon.png';
+import vector from '../../assets/images/Vector.png';
+import Delete from '../../assets/images/Delete.png';
+import Logout from '../../assets/images/logout.png';
 
-const SideBar = () => {
+const GrocerySideBar = () => {
   return (
-  <div className='w-[225px]'>
+  <div className='w-[15%]'>
       <div className=' bg-[#175CD3]   h-screen overflow-y-auto'>
         <div className='flex gap-3 pt-8 pl-10'>
           <img className='w-[40] h-[40]' src={logo} alt="" />
@@ -16,7 +17,23 @@ const SideBar = () => {
         </div>
         <div className='flex mt-16 gap-6 ml-7'>
           <img src={List} alt=''/>
-          <Link to='/dashboard' className='text-white text-xl'>Post</Link>
+          <Link to='/dashboard' className='text-white text-base'>Shopping</Link>
+        </div>
+        <div className='flex mt-5 marker:gap-6 ml-7'>
+          <img src={List} alt=''/>
+          <Link to='/dashboard' className='text-white text-base pl-6'>Home Chores</Link>
+        </div>
+        <div className='flex mt-5 gap-6 ml-7'>
+          <img src={List} alt=''/>
+          <Link to='/dashboard' className='text-white text-base'>Movies to watch</Link>
+        </div>
+        <div className='flex mt-5 gap-6 ml-7'>
+          <img src={List} alt=''/>
+          <Link to='/dashboard' className='text-white text-base'>My Projects</Link>
+        </div>
+        <div className='flex mt-5 gap-6 ml-7'>
+          <img src={List} alt=''/>
+          <Link to='/dashboard' className='text-white text-base'>My Calendar</Link>
         </div>
         <div className='mt-[10px] w-[133px] h-[158px] p-[7px 20px 7px 0px] gap-[10px] bg-[#FFFFFF] ml-8 rounded-xl text-[#175CD3]'>
           <div className='flex gap-6  ml-2'>
@@ -41,4 +58,4 @@ const SideBar = () => {
   )
 }
 
-export default SideBar;
+export default GrocerySideBar;
