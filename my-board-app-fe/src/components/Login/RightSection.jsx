@@ -5,34 +5,33 @@ import axios from 'axios';
 import Logo from '../../assets/images/my-board-logo.png';
 import Google from '../../assets/images/Google.png';
 import './style.css';
-//import Loader from '../Signup/Loader';
+
 
 export const RightSection = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-   // const [isLoading, setIsLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
 
     const handleLogin = async (event) => {
         event.preventDefault();
         setIsLoading(true);
-       // setIsLoading(true);
         if (!email.trim() && !password.trim()) {
             setErrorMessage('Email and password are required');
-            //setIsLoading(false);
+            
             return;
         }
         if(!email.trim()) {
           setErrorMessage('Email Address cannot be empty');
-         // setIsLoading(false);
+        
           return;
         }
         if(!password.trim()) {
           setErrorMessage('Password cannot be empty');
-         // setIsLoading(false);
+         
           return;
         }
+
         try {
             const response = await axios.post('http://localhost:8080/api/v1/auth/login', {
                 email,
@@ -59,15 +58,6 @@ export const RightSection = () => {
     return (
                 
         <div className='py-20 px-20'>
-           {/* {isLoading && (
-        //         <div style={{
-        //             position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
-        //             display: 'flex', justifyContent: 'center', alignItems: 'center',
-        //             backgroundColor: 'rgba(0, 0, 0, 0.75)'
-        //         }}>
-        //             <Loader />
-        //         </div>
-            // )} */}
             <div className='flex items-center justify-center'>
                 <img src={Logo} alt='logo'/>
                 <p className='px-3 text-[#175CD3] text-[25px]'>My Board</p>
