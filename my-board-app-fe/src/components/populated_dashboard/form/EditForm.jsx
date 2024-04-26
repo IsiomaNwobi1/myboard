@@ -6,7 +6,7 @@ import Flag from "../../../assets/images/flag.png";
 import Status from "../../../assets/images/Icon-3.png";
 import Close from "../../../assets/images/close.png";
 
-const EditForm = ({ hideModal, taskListId, taskId }) => {
+const EditForm = ({ hideModal, taskListId, taskId, updateTodo }) => {
   const [taskDetails, setTaskDetails] = useState({
     taskTitle: "",
     title: "",
@@ -37,13 +37,16 @@ const EditForm = ({ hideModal, taskListId, taskId }) => {
         `http://localhost:8080/api/v1/task/update/${taskId}`,
         {
           title: taskDetails.taskTitle,
+          description: taskDetails.description,
           dueDate: taskDetails.dueDate,
           priority: taskDetails.priority,
           status: taskDetails.status,
-          description: taskDetails.description,
+          
         }
       );
       console.log("Task updated successfully:", response.data);
+      updateTodo(response.data);
+      hideModal();
     } catch (error) {
       console.error("Failed to update task:", error);
     }
