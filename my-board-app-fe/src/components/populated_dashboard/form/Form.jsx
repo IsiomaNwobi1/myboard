@@ -68,7 +68,6 @@ const Form = ({ hideModal }) => {
             console.error('Failed to create task:', error);
         }
     };
-
     return (
         <form onSubmit={handleSubmit} className='flex justify-center fixed top-[10] left-[50] w-[100%] items-center h-[100vh] z-[3] bg-[#00000036]'>
             <div className="w-[550px] mt-[50px]">
@@ -79,6 +78,7 @@ const Form = ({ hideModal }) => {
                     </div>
                     <div>
                         <input 
+
                             type="text" 
                             value={taskTitle} 
                             onChange={(e) => setTaskTitle(e.target.value)} 
@@ -167,7 +167,7 @@ const Form = ({ hideModal }) => {
                                     <input type="radio" className='form-radio text-blue-500' name="status" value="IN_PROGRESS" checked={taskStatus === 'IN_PROGRESS'} onChange={(e) => setTaskStatus(e.target.value)} />
                                     <span className='ml-2'>In Progress</span>
                                 </label>
-                            </div>
+                            </div>;
                         </div>
                     </div>
                     <div className='mt-[35px] pl-28'>

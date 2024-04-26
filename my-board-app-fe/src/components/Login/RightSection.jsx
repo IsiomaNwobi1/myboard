@@ -10,6 +10,7 @@ export const RightSection = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const [loading, setLoading] = useState(false)
     const navigate = useNavigate();
 
     const handleLogin = async (event) => {
@@ -116,6 +117,7 @@ export const RightSection = () => {
 
                 <div className='flex items-center justify-center mt-2 mb-2'>
                     <button type="submit" className="buttoun w-full text-[#FCFCFD]" disabled={isLoading}>{isLoading ?"Loading...": "LOG IN"}</button>
+
                 </div>
             </form>
 
