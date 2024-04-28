@@ -13,7 +13,7 @@ const Header = ({toggleMenuModal}) => {
         <div className='flex justify-between h-8 pr-[4rem]  pt-6'>
           <div className='flex '>
             <img src={List} alt="" className='w-[2rem] h-[1.7rem]'/>
-            <Link to='/dashboard' className=" text-white font-lato  text-xl leading-tight">Post</Link>
+            <Link to='/dashboard' className=" text-white font-lato  text-xl leading-tight pl-2">Post</Link>
           </div>
           <div className='flex  gap-3 mr-[2rem]'>
             <h4 className=' mt-1.5 text-white font-lato text-xl  leading-tight'>Hey, Chisom</h4>

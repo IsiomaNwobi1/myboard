@@ -26,7 +26,7 @@ const Dashboard = () => {
          <Header toggleMenuModal={ToggleMenuModal} />
          <Body hideModal={ToggleFormModal} />
         </div>
-        {showForm && <Modal children={<Form hideModal={ToggleFormModal} />} />}
+        {showForm && <Modal children={<Form className="z-50" hideModal={ToggleFormModal} />} />}
     </section>
    
   );

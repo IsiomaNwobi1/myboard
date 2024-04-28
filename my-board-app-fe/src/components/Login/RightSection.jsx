@@ -17,7 +17,7 @@ export const RightSection = () => {
     const handleLogin = async (event) => {
         event.preventDefault();
         setIsLoading(true);
-
+        
         if (!email.trim() && !password.trim()) {
             setErrorMessage('Email and password are required');
             setIsLoading(false);
@@ -38,7 +38,16 @@ export const RightSection = () => {
                 email,
                 password
             });
-            navigate('/dashboard'); // Redirect user to dashboard after successful login
+
+            setIsLoading(true)
+
+            localStorage.setItem('token', response.data.accessToken)
+            localStorage.setItem('userId', response.data.id)
+
+            setTimeout(() => {
+                navigate('/dashboard')
+                setIsLoading(false)
+            }, 3000); // Redirect user to dashboard after successful login
         } catch (error) {
             const errorMsg = error.response ? error.response.data.error : 'Login failed, please try again';
             setErrorMessage(errorMsg);
@@ -115,7 +124,7 @@ export const RightSection = () => {
             </div>
 
                 <div className='flex items-center justify-center mt-2 mb-2'>
-                    <button type="submit" className="buttoun w-full text-[#FCFCFD]">LOG IN</button>
+                    <button type="submit" className="buttoun w-full text-[#FCFCFD]" disabled={isLoading}>{isLoading ?"Loading...": "LOG IN"}</button>
                 </div>
             </form>
 
