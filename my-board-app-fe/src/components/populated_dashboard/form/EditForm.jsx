@@ -41,7 +41,6 @@ const EditForm = ({ hideModal, taskListId, taskId, updateTodo }) => {
           dueDate: taskDetails.dueDate,
           priority: taskDetails.priority,
           status: taskDetails.status,
-          
         }
       );
       console.log("Task updated successfully:", response.data);
@@ -49,6 +48,7 @@ const EditForm = ({ hideModal, taskListId, taskId, updateTodo }) => {
       hideModal();
     } catch (error) {
       console.error("Failed to update task:", error);
+      // Handle error (show error message, etc.)
     }
   };
 
@@ -76,7 +76,7 @@ const EditForm = ({ hideModal, taskListId, taskId, updateTodo }) => {
               <img
                 src={Close}
                 alt=""
-                onClick={hideModal}
+                onClick={() => hideModal()}
                 className="w-[25px] h-[25px] mt-1"
               />
             </button>
@@ -223,7 +223,7 @@ const EditForm = ({ hideModal, taskListId, taskId, updateTodo }) => {
           <div className="mt-[35px] pl-28">
             <button
               className="rounded-[5px] w-[100px] h-[40px] text-[#175CD3] gap-10 border border-blue-500  bg-white ml-[180px]"
-              onClick={() => handleCancel}
+              onClick={() => handleCancel()}
             >
               Cancel
             </button>

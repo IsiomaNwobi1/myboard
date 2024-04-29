@@ -13,6 +13,7 @@ import { LoginPage } from './pages/LoginPage';
 import EditMenu from './components/populated_dashboard/edit_menu/EditMenu';
 import InitiateRestPage from './pages/InitiateRestPage';
 import ResetPage from './pages/ResetPage';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
     const [count, setCount] = useState(0);
