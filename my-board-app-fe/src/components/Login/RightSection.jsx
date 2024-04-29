@@ -43,6 +43,8 @@ export const RightSection = () => {
 
             localStorage.setItem('token', response.data.accessToken)
             localStorage.setItem('userId', response.data.id)
+            localStorage.setItem('userName', response.data.firstName);
+
 
             setTimeout(() => {
                 navigate('/dashboard')

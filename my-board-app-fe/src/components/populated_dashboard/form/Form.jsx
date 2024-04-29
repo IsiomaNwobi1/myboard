@@ -8,11 +8,16 @@ import Close from '../../../assets/images/close.png';
 
 const Form = ({ hideModal }) => {
     const [taskTitle, setTaskTitle] = useState('');
+    const [taskDescription, setTaskDescription] = useState('');
+    const [taskDueDate, setTaskDueDate] = useState('');
+    const [taskPriority, setTaskPriority] = useState('NONE');
+    const [taskStatus, setTaskStatus] = useState('NOT_STARTED');
+    const [selectedTaskListId, setSelectedTaskListId] = useState('');
     const [taskLists, setTaskLists] = useState([]);
     
     const userId = localStorage.getItem('userId');
 
-    useEffect(() => {
+    useEffect(() =>  {
         const accessToken = localStorage.getItem('token');
     
         const fetchTaskLists = async () => {
@@ -22,6 +27,9 @@ const Form = ({ hideModal }) => {
                         headers: { Authorization: `Bearer ${accessToken}` }
                     });
                     setTaskLists(response.data);
+                    if (response.data.length > 0) {
+                        setSelectedTaskListId(response.data[0].id);
+                    }
                 } catch (error) {
                     console.error('Failed to fetch task lists', error);
                 }
@@ -32,9 +40,34 @@ const Form = ({ hideModal }) => {
     
         fetchTaskLists();
     }, [userId]);
-    
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const accessToken = localStorage.getItem('token');
+
+        console.log('Selected Task List ID:', selectedTaskListId);
+
+        const taskData = {
+            title: taskTitle,
+            description: taskDescription,
+            deadline: taskDueDate,
+            priorityLevel: taskPriority,
+            status: taskStatus
+        };
+
+        try {
+            const response = await axios.post(`http://localhost:8080/api/v1/task/new_task/${userId}/${selectedTaskListId}`, taskData, {
+                headers: { Authorization: `Bearer ${accessToken}` }
+            });
+            console.log('Task created successfully:', response.data);
+            hideModal();
+        } catch (error) {
+            console.error('Failed to create task:', error);
+        }
+    };
+
     return (
-        <form action="" className='flex justify-center fixed top-[10] left-[50] w-[100%] items-center h-[100vh] z-[3] bg-[#00000036]'>
+        <form onSubmit={handleSubmit} className='flex justify-center fixed top-[10] left-[50] w-[100%] items-center h-[100vh] z-[3] bg-[#00000036]'>
             <div className="w-[550px] mt-[50px]">
                 <div className='bg-[#175CD3] h-[87px] pt-[1.5px] rounded-t-[10px]'>
                     <div className='flex justify-between px-3'>
@@ -55,74 +88,88 @@ const Form = ({ hideModal }) => {
                 <div className='bg-[#ffff] h-[420px] rounded-b-[10px] pl-6'>
                     <div className='flex gap-4 pt-4 pb-2'>
                         <img src={Lines} alt="Lines" className='h-[15px] mt-6 w-[25px]' />
-                        <input type="text" className='border-l-0 border-r-0 border-t-0 w-[450px] h-[52px]' placeholder="Task Description" />
+                        <input 
+                            type="text"
+                            value={taskDescription}
+                            onChange={(e) => setTaskDescription(e.target.value)}
+                            className='border-l-0 border-r-0 border-t-0 w-[450px] h-[52px]'
+                            placeholder="Task Description"
+                        />
                     </div>
                     <div className='flex gap-4 pb-2'>
                         <img src={Lines} alt="Lines" className='h-[15px] mt-6 w-[25px]' />
-                        <select className='border-l-0 border-r-0 border-t-0 w-[450px] h-[52px]' placeholder="Lists">
-                            {taskLists.map((list) => (
-                                <option key={list.id} value={list.id}>{list.title}</option>
-                            ))}
-                        </select>
+                        <select
+                        value={selectedTaskListId}
+                        onChange={(e) => setSelectedTaskListId(e.target.value)}
+                        className='border-l-0 border-r-0 border-t-0 w-[450px] h-[52px]'
+                        placeholder="Select Task List"
+                         >
+                        {taskLists.map((list) => (
+                            <option key={list.id} value={list.id}>{list.title}</option>
+                        ))}
+                    </select>
                     </div>
                     <div className='flex gap-4 pb-2'>
-                        <img src={Calendar} alt="" className='h-[25px] mt-6 w-[25px]' />
-                        <input type="datetime-local" className='border-l-0 border-r-0 border-t-0 w-[450px] h-[52px]' placeholder="Due Date" />
+                        <img src={Calendar} alt="Calendar" className='h-[25px] mt-6 w-[25px]' />
+                        <input 
+                            type="datetime-local"
+                            value={taskDueDate}
+                            onChange={(e) => setTaskDueDate(e.target.value)}
+                            className='border-l-0 border-r-0 border-t-0 w-[450px] h-[52px]'
+                        />
                     </div>
                     <div className='flex gap-4 pt-2'>
-                        <img src={Flag} alt="" className='h-[25px] mt-6 w-[25px]' />
+                        <img src={Flag} alt="Priority" className='h-[25px] mt-6 w-[25px]' />
                         <div className='flex flex-col'>
                             <p className='mb-2 text-gray-500'>Priority</p>
                             <div className='flex space-x-4'>
                                 <label className='inline-flex items-center'>
-                                    <input type="radio" className='form-radio text-blue-500' name="priority" value="none" />
+                                    <input type="radio" className='form-radio text-blue-500' name="priority" value="NONE" checked={taskPriority === 'NONE'} onChange={(e) => setTaskPriority(e.target.value)} />
                                     <span className='ml-2'>None</span>
                                 </label>
                                 <label className='inline-flex items-center'>
-                                    <input type="radio" className='form-radio text-blue-500' name="priority" value="high" />
+                                    <input type="radio" className='form-radio text-blue-500' name="priority" value="HIGH" checked={taskPriority === 'HIGH'} onChange={(e) => setTaskPriority(e.target.value)} />
                                     <span className="ml-2">High</span>
                                 </label>
                                 <label className="inline-flex items-center">
-                                    <input type="radio" className='form-radio text-blue-500' name="priority" value="medium" />
+                                    <input type="radio" className='form-radio text-blue-500' name="priority" value="MEDIUM" checked={taskPriority === 'MEDIUM'} onChange={(e) => setTaskPriority(e.target.value)} />
                                     <span className="ml-2">Medium</span>
                                 </label>
                                 <label className="inline-flex items-center">
-                                    <input type="radio" className='form-radio text-blue-500' name="priority" value="low" />
+                                    <input type="radio" className='form-radio text-blue-500' name="priority" value="LOW" checked={taskPriority === 'LOW'} onChange={(e) => setTaskPriority(e.target.value)} />
                                     <span className="ml-2">Low</span>
                                 </label>
                             </div>
                         </div>
                     </div>
                     <div className='flex gap-4 pt-2'>
-                        <img src={Status} alt="" className='h-[25px] mt-6 w-[25px]' />
+                        <img src={Status} alt="Status" className='h-[25px] mt-6 w-[25px]' />
                         <div className='flex flex-col'>
                             <p className='mb-2 text-gray-500'>Status</p>
                             <div className='flex space-x-4'>
                                 <label className='inline-flex items-center'>
-                                    <input type="radio" className='form-radio text-blue-500' name="status" value="completed" />
+                                    <input type="radio" className='form-radio text-blue-500' name="status" value="COMPLETED" checked={taskStatus === 'COMPLETED'} onChange={(e) => setTaskStatus(e.target.value)} />
                                     <span className='ml-2'>Completed</span>
                                 </label>
                                 <label className='inline-flex items-center'>
-                                    <input type="radio" className='form-radio text-blue-500' name="status" value="not started" />
+                                    <input type="radio" className='form-radio text-blue-500' name="status" value="NOT_STARTED" checked={taskStatus === 'NOT_STARTED'} onChange={(e) => setTaskStatus(e.target.value)} />
                                     <span className='ml-2'>Not Started</span>
                                 </label>
                                 <label className='inline-flex items-center'>
-                                    <input type="radio" className='form-radio text-blue-500' name="status" value="In Progress" />
+                                    <input type="radio" className='form-radio text-blue-500' name="status" value="IN_PROGRESS" checked={taskStatus === 'IN_PROGRESS'} onChange={(e) => setTaskStatus(e.target.value)} />
                                     <span className='ml-2'>In Progress</span>
                                 </label>
                             </div>
                         </div>
                     </div>
                     <div className='mt-[35px] pl-28'>
-                        <button className=' rounded-[5px] w-[100px] h-[40px] text-[#175CD3] gap-10 border border-blue-500  bg-white ml-[180px]'>Cancel</button>
-                        <button className=' rounded-[5px] w-[100px] h-[40px] text-white gap-10 bg-[#175CD3] ml-2'>Save</button>
+                        <button className='rounded-[5px] w-[100px] h-[40px] text-[#175CD3] border border-blue-500 bg-white ml-[180px]'>Cancel</button>
+                        <button className='rounded-[5px] w-[100px] h-[40px] text-white bg-[#175CD3] ml-2'>Save</button>
                     </div>
                 </div>
-
             </div>
         </form>
-
-    )
+    );
 }
 
-export default Form
+export default Form;
