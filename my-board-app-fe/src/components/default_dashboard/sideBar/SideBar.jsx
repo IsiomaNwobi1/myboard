@@ -51,12 +51,12 @@ const SideBar = () => {
         <div className='mt-16 ml-7'>
           {taskLists.map(list => (
             <div key={list.id} className='flex items-center gap-2'>
-              <button onClick={() => {
-                setSelectedList(list);
-                onListSelect(list.title);
-              }}>
-                <img src={List} alt='' />
-              </button>
+            <button onClick={() => {
+              setSelectedList(list);
+              onListSelect(list.title); // Update the list name in Dashboard
+            }}>
+              <img src={List} alt='' />
+            </button>
               <Link to={`/dashboard/${list.id}`} className='text-white text-xl'>{list.title}</Link>
               {selectedList && selectedList.id === list.id && (
                 <div className="absolute bg-white shadow-lg rounded-lg p-2">

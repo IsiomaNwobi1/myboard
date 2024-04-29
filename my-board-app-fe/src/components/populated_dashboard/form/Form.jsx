@@ -25,8 +25,11 @@ const Form = ({ hideModal }) => {
                 try {
                     const response = await axios.get(`http://localhost:8080/api/v1/task-list/get-task-list/${userId}`, {
                         headers: { Authorization: `Bearer ${accessToken}` }
+
                     });
+
                     setTaskLists(response.data);
+                    console.log(response.data)
                     if (response.data.length > 0) {
                         setSelectedTaskListId(response.data[0].id);
                     }
@@ -100,10 +103,15 @@ const Form = ({ hideModal }) => {
                         <img src={Lines} alt="Lines" className='h-[15px] mt-6 w-[25px]' />
                         <select
                         value={selectedTaskListId}
-                        onChange={(e) => setSelectedTaskListId(e.target.value)}
+                        onChange={(e) => {
+                            // setSelectedTaskListId(e.target.value){
+                            setSelectedTaskListId(taskLists[e.target.selectedIndex - 1]?.id);
+                            }}
+                        
                         className='border-l-0 border-r-0 border-t-0 w-[450px] h-[52px]'
                         placeholder="Select Task List"
                          >
+                        
                         {taskLists.map((list) => (
                             <option key={list.id} value={list.id}>{list.title}</option>
                         ))}
