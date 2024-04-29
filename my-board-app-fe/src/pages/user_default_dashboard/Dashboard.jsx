@@ -9,29 +9,31 @@ import Menu from '../../components/populated_dashboard/menu/Menu';
 const Dashboard = () => {
   const [showForm, setShowForm] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const [selectedListName, setSelectedListName] = useState("Post"); // Default to "Post"
 
   const ToggleFormModal = () => {
     setShowForm(showForm => !showForm);
-  }
+  };
 
   const ToggleMenuModal = () => {
     setShowMenu(showMenu => !showMenu);
-  }
+  };
+
+  const handleListSelect = (name) => {
+    setSelectedListName(name);
+  };
 
   return (
     <section className="dashboard-container">
-      {showMenu && <Menu toggleMenuModal={ToggleMenuModal}/>}
+      {showMenu && <Menu toggleMenuModal={ToggleMenuModal} />}
       <div className="flex">
-         <SideBar />
-         <Header toggleMenuModal={ToggleMenuModal} />
-         <Body hideModal={ToggleFormModal} />
-        </div>
-        {showForm && <Modal children={<Form hideModal={ToggleFormModal} />} />}
+        <SideBar onListSelect={handleListSelect} />
+        <Header selectedListName={selectedListName} toggleMenuModal={ToggleMenuModal} />
+        <Body hideModal={ToggleFormModal} />
+      </div>
+      {showForm && <Modal children={<Form className="z-50" hideModal={ToggleFormModal} />} />}
     </section>
-   
   );
 }
-
-
 
 export default Dashboard;
