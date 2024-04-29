@@ -1,13 +1,13 @@
 import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
-export const ProtectedRoute = ({ component }) => {
+export const ProtectedRoute = () => {
   const isAuthenticated = localStorage.getItem("token");
   console.log(isAuthenticated);
 
-  // isAuthenticated ? <Component /> : <Navigate to="/login" />;
-
   if (!isAuthenticated) {
+
+console.log('back to login');
 
     return <Navigate to="/login" />;
 

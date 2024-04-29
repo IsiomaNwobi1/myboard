@@ -10,7 +10,7 @@ export const RightSection = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
-    const [loading, setLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
     const navigate = useNavigate();
 
     const handleLogin = async (event) => {
