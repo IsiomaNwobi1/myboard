@@ -239,6 +239,20 @@ export const RightSection = () => {
                     />
                 </div>
 
+                <div className="m-[30px_6px_6px_50px] flex flex-row justify-between w-[476px] box-sizing-border">
+                <div className="flex flex-row box-sizing-border">
+                <div className="m-[10px_14px_9px_0] flex flex-row justify-center w-[220px] h-[1px] box-sizing-border">
+                <div className="bg-[#EAEBEC] w-full h-[1px]"></div>
+                </div>
+                <span className="break-words font-['Inter'] font-[var(--button-normal-14-font-weight,400)] text-[14px] leading-[var(--button-normal-14-line-height,1.429)] text-[var(--grey-400,#98A2B3)]">
+                OR
+                </span>
+                </div>
+                <div className="m-[9px_0_10px_0] flex flex-row justify-center w-[202px] h-[1px] box-sizing-border">
+                <div className="bg-[#EAEBEC] w-full h-[1px]"></div>
+                </div>
+                </div>
+
                 <div className='flex items-center  justify-center w-full'>
                     <button className="flex items-center justify-center flex-row rounded-lg mt-2 mb-2 bg-white py-3 w-full border text-[#98A2B3] border-[#D0D5DD] border-3">
                         <img src={Google} alt="Google sign-in" className='px-3' />
@@ -247,7 +261,7 @@ export const RightSection = () => {
                 </div>
 
                 <div className='flex items-center justify-center mt-2 mb-2'>
-                    <button type="submit" className="buttoun w-full text-[#FCFCFD] h-[3.3rem]">SIGNUP</button>
+                    <button type="submit" className="buttoun w-full text-[#FCFCFD]">SIGNUP</button>
                 </div>
             </form>
             
