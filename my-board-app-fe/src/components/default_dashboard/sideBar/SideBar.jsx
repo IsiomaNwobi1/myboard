@@ -98,7 +98,7 @@ const SideBar = () => {
           </div>
         </div>
       </div>
-      {/* {isModalOpen && (
+      {isModalOpen && (
         <NewListModal
           isOpen={isModalOpen}
           onClose={() => {
@@ -109,7 +109,7 @@ const SideBar = () => {
           initialTitle={selectedList && selectedList.title}
           initialDescription={selectedList && selectedList.description}
         />
-      )} */}
+      )}
        {showForm && <Modal children={<Form className="z-50" hideModal={ToggleFormModal} />} />}
     </div>
   )
