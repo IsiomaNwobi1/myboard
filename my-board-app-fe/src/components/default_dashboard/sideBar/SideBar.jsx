@@ -9,8 +9,17 @@ import List from '../../../assets/images/list-ul.png';
 import Icon from '../../../assets/images/Icon.png';
 import Delete from '../../../assets/images/Delete.png';
 import Logout from '../../../assets/images/logout.png';
+import ApiQuery from "../../../api-service/index.js";
 
 const SideBar = () => {
+    const handleLogout = async () => {
+      await ApiQuery.post('/auth/logout')
+          .then(response => {
+            console.log(response);
+            window.location.href = '/login';
+          }).catch(error => alert(error.message));
+    }
+
   const [isModalOpen, setModalOpen] = useState(false);
   const [selectedList, setSelectedList] = useState(null);
   const [selectedListId, setSelectedListId] = useState(null);
@@ -124,7 +133,7 @@ const SideBar = () => {
           </div>
           <div className='flex gap-2 mt-[0.75rem] ml-2'>
             <img src={Logout} alt="" />
-            <Link to='/dashboard'>Logout</Link>
+            <Link to="#" onClick={handleLogout}>Logout</Link>
           </div>
         </div>
       </div>
