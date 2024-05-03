@@ -6,11 +6,9 @@ export const ProtectedRoute = () => {
   console.log(isAuthenticated);
 
   if (!isAuthenticated) {
-
-console.log('back to login');
+    console.log("back to login");
 
     return <Navigate to="/login" />;
-
   }
 
   return <Outlet />;

@@ -49,24 +49,30 @@ const SideBar = () => {
           <h1 className='font-sans font-normal text-xl leading-7 text-white pt-1.5'>My Board</h1>
         </div>
         <div className='mt-16 ml-7'>
-          {taskLists.map(list => (
-            <div key={list.id} className='flex items-center gap-2'>
-            <button onClick={() => {
-              setSelectedList(list);
-              onListSelect(list.title); // Update the list name in Dashboard
-            }}>
-              <img src={List} alt='' />
-            </button>
-              <Link to={`/dashboard/${list.id}`} className='text-white text-xl'>{list.title}</Link>
-              {selectedList && selectedList.id === list.id && (
-                <div className="absolute bg-white shadow-lg rounded-lg p-2">
-                  <button onClick={() => setModalOpen(true)}>Edit List</button>
-                  <button onClick={() => handleDelete(list.id)}>Delete List</button>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
+          {console.log("tasklists: ", taskLists)}
+          {taskLists.length === 0 ? (
+          <div className="text-white text-center mt-4">No task lists found. Create a new list to get started!</div>
+          ) : (
+          taskLists.map((list) => (
+        <div key={list.id} className='flex items-center gap-2'>
+        <button onClick={() => {
+          setSelectedList(list);
+          setSelectedListId(list.id);
+        }}>
+          <img src={List} alt='' />
+        </button>
+        <Link to={`/dashboard/${list.id}`} className='text-white text-xl'>{list.title}</Link>
+        {selectedList && selectedList.id === list.id && (
+          <div className="absolute bg-white shadow-lg rounded-lg p-2 ml-[80px]">
+            <button onClick={ToggleFormModal}>Create Task</button><br/>
+            <button onClick={() => setModalOpen(true)}>Edit List</button><br/>
+            <button onClick={() => handleDelete(list.id)}>Delete List</button>
+          </div>
+        )}
+      </div>
+    ))
+  )}
+</div>
         <div className='mt-[10px] w-[133px] h-[158px] p-[7px 20px 7px 0px] gap-[10px] bg-[#FFFFFF] ml-8 rounded-xl text-[#175CD3]'>
           <div className='flex gap-2 ml-2'>
             <img src={Icon} alt="" className='w-[18px] h-[10px] mt-3' />
