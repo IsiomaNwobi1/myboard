@@ -5,3 +5,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.fc-prev-button, .fc-next-button {
+    background-color: transparent !important; /* Set background color to transparent */
+    border: none; /* Remove border */
+    color: inherit !important; /* Use the default text color */
+}
+
+.fc .fc-toolbar{
+    justify-content: space-around;
+}
+.fc .fc-button-primary{
+    border: none;
+}
+
+

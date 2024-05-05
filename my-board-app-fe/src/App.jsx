@@ -11,6 +11,7 @@ import { LoginPage } from "./pages/LoginPage";
 import InitiateRestPage from "./pages/InitiateRestPage";
 import ResetPage from "./pages/ResetPage";
 import { ProtectedRoute } from "./components/ProtectedRoute";
+import SchedularPage from "./pages/SchedularPage";
 
 function AllRoutes() {
   return (
@@ -27,6 +28,7 @@ function AllRoutes() {
         <Route path="/create-task" element={<Form />} />
         <Route path="edit-task" element={<Menu />} />
         <Route path="/grocery-dashboard" element={<GroceryDashboard />} />
+        <Route path="/scheduler" element={<SchedularPage/>} />
         
       </Route>
     </Routes>
