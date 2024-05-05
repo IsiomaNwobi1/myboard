@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import NewListModal from "./NewListModal";
@@ -22,14 +23,34 @@ const SideBar = ({ selectedListId, setSelectedListId, fetchTasks }) => {
       .catch((error) => alert(error.message));
   };
 
+=======
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import NewListModal from './NewListModal';
+import Modal from '../../Modal';
+import Form from '../../populated_dashboard/form/Form'; // Import the Form component
+import { Link } from 'react-router-dom';
+import logo from '../../../assets/images/add_task.png';
+import List from '../../../assets/images/list-ul.png';
+import Icon from '../../../assets/images/Icon.png';
+import Delete from '../../../assets/images/Delete.png';
+import Logout from '../../../assets/images/logout.png';
+
+const SideBar = () => {
+>>>>>>> Stashed changes
   const [isModalOpen, setModalOpen] = useState(false);
   const [selectedList, setSelectedList] = useState(null);
   const [taskLists, setTaskLists] = useState([]);
+<<<<<<< Updated upstream
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
   const [listToDelete, setListToDelete] = useState(null);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const userId = localStorage.getItem("userId");
   const accessToken = localStorage.getItem("token");
+=======
+  const userId = localStorage.getItem('userId');
+  const accessToken = localStorage.getItem('token');
+>>>>>>> Stashed changes
 
   useEffect(() => {
     let mounted = true;
@@ -74,6 +95,7 @@ const SideBar = ({ selectedListId, setSelectedListId, fetchTasks }) => {
     setShowForm((showForm) => !showForm);
   };
 
+<<<<<<< Updated upstream
   const handleDelete = (listId) => {
     setListToDelete(listId);
     setShowDeleteConfirmation(true);
@@ -103,6 +125,8 @@ const SideBar = ({ selectedListId, setSelectedListId, fetchTasks }) => {
     }
   };
 
+=======
+>>>>>>> Stashed changes
   return (
     <div className="w-[225px]">
       <div className="bg-[#175CD3] h-screen overflow-y-auto">
@@ -161,9 +185,13 @@ const SideBar = ({ selectedListId, setSelectedListId, fetchTasks }) => {
           </div>
           <div className='flex gap-2 mt-[0.75rem] ml-2'>
             <img src={Logout} alt="" />
+<<<<<<< Updated upstream
             <Link to="#" onClick={handleLogout}>
               Logout
             </Link>
+=======
+            <Link to='/dashboard'>Logout</Link>
+>>>>>>> Stashed changes
           </div>
         </div>
       </div>
@@ -179,6 +207,7 @@ const SideBar = ({ selectedListId, setSelectedListId, fetchTasks }) => {
           initialDescription={selectedList && selectedList.description}
         />
       )}
+<<<<<<< Updated upstream
       {showForm && (
         <Modal
           children={<Form className="z-50" hideModal={ToggleFormModal} />}
@@ -237,6 +266,9 @@ const SideBar = ({ selectedListId, setSelectedListId, fetchTasks }) => {
           </div>
         </div>
       )}
+=======
+       {showForm && <Modal children={<Form className="z-50" hideModal={ToggleFormModal} />} />}
+>>>>>>> Stashed changes
     </div>
   );
 };
