@@ -10,6 +10,7 @@ import Icon from '../../../assets/images/Icon.png';
 import Delete from '../../../assets/images/Delete.png';
 import Logout from '../../../assets/images/logout.png';
 import ApiQuery from "../../../api-service/index.js";
+import CalendarIcon from "../../../assets/images/icons8.png";
 
 const SideBar = () => {
     const handleLogout = async () => {
@@ -132,6 +133,10 @@ const SideBar = () => {
           <div className='flex gap-2 mt-[0.75rem] ml-2'>
             <img src={Delete} alt="" className='w-[14px] h-[18px]' />
             <Link to='/dashboard'>Delete List</Link>
+          </div>
+          <div className='flex gap-2 mt-[0.75rem] ml-2'>
+            <img src={CalendarIcon} alt="" className='w-[20px] h-[22px]' />
+            <Link to='/scheduler'>Calendar</Link>
           </div>
           <div className='flex gap-2 mt-[0.75rem] ml-2'>
             <img src={Logout} alt="" />
