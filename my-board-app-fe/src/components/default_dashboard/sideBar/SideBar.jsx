@@ -103,6 +103,7 @@ const SideBar = () => {
           <h1 className='font-sans font-normal text-xl leading-7 text-white pt-1.5'>My Board</h1>
         </div>
         <div className='mt-16 ml-7'>
+
           {taskLists.map(list => (
             <div key={list.id} className='flex items-center gap-2'>
               <button onClick={() => {
@@ -123,6 +124,7 @@ const SideBar = () => {
           ))}
         </div>
         <div className='mt-[10px] w-[133px]  p-[10px 20px 10px 0px] gap-[10px] bg-[#FFFFFF] ml-8 rounded-xl text-[#175CD3]'>
+
           <div className='flex gap-2 ml-2'>
             <img src={Icon} alt="" className='w-[18px] h-[10px] mt-3' />
             <Link to="#" onClick={() => setModalOpen(true)} className='mt-2'>New List</Link>
