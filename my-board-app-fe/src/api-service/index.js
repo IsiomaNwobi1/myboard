@@ -7,7 +7,7 @@ const ApiQuery = axios.create({
     baseURL: REACT_APP_BACKEND_HOST,
     timeout: 5000,
     headers: {
-        Authorization: `Bearer ${token}`,
+        // Authorization: `Bearer ${token}`,
         Accept: "application/json",
         'Access-Control-Allow-Origin': '*',
     }
