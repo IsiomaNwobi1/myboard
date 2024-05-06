@@ -68,7 +68,6 @@ const Form = ({ hideModal }) => {
             console.error('Failed to create task:', error);
         }
     };
-
     return (
         <form onSubmit={handleSubmit} className='flex justify-center fixed top-[10] left-[50] w-[100%] items-center h-[100vh] z-[3] bg-[#00000036]'>
             <div className="w-[550px] mt-[50px]">
@@ -79,6 +78,7 @@ const Form = ({ hideModal }) => {
                     </div>
                     <div>
                         <input 
+
                             type="text" 
                             value={taskTitle} 
                             onChange={(e) => setTaskTitle(e.target.value)} 
@@ -105,7 +105,7 @@ const Form = ({ hideModal }) => {
                         value={selectedTaskListId}
                         onChange={(e) => {
                             // setSelectedTaskListId(e.target.value){
-                            setSelectedTaskListId(taskLists[e.target.selectedIndex - 1]?.id);
+                            setSelectedTaskListId(taskLists[e.target.selectedIndex]?.id);
                             }}
                         
                         className='border-l-0 border-r-0 border-t-0 w-[450px] h-[52px]'
@@ -171,7 +171,7 @@ const Form = ({ hideModal }) => {
                         </div>
                     </div>
                     <div className='mt-[35px] pl-28'>
-                        <button className='rounded-[5px] w-[100px] h-[40px] text-[#175CD3] border border-blue-500 bg-white ml-[180px]'>Cancel</button>
+                        <button className='rounded-[5px] w-[100px] h-[40px] text-[#175CD3] border border-blue-500 bg-white ml-[180px]' onClick={hideModal}>Cancel</button>
                         <button className='rounded-[5px] w-[100px] h-[40px] text-white bg-[#175CD3] ml-2'>Save</button>
                     </div>
                 </div>

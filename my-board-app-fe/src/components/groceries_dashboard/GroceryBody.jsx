@@ -4,11 +4,17 @@ import image2 from '../../assets/images/three-dots.png'
 import EditMenu from '../populated_dashboard/edit_menu/EditMenu';
 import Modal from '../../components/Modal';
 import Form from '../populated_dashboard/form/Form';
+import EditForm from '../populated_dashboard/form/EditForm';
 
 const GroceryBody = ({}) => {
 
 
     const [showForm, setShowForm] = useState(false);
+    const [showEditForm, setShowEditForm] = useState(false);
+
+    const ToggleEditFormModal = () => {
+        setShowEditForm(showEditForm => !showEditForm);
+    }
     const ToggleFormModal = () => {
         setShowForm(showForm => !showForm);
       }
@@ -19,8 +25,9 @@ const GroceryBody = ({}) => {
       }
     return (
         <div className='pt-[8rem] w-[1215px]'>
-            {showEditMenu && <EditMenu toggleEditMenuModal={ToggleEditMenuModal}/>}
+            {showEditMenu && <EditMenu toggleEditMenuModal={ToggleEditMenuModal} showForm={ToggleFormModal} />}
             {showForm && <Modal children={<Form hideModal={ToggleFormModal} />} />}
+            {showEditForm && <Modal children={<EditForm hideModal={ToggleEditFormModal} />} />}
             <div className='h-[62vh]'>
                 <div className='flex items-center justify-between border-b-[#EAECF0] border-t-0 border-r-0 border-l-0 border-2 p-5'>
                     <div className='flex items-center justify-between '>
