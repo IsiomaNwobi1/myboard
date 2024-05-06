@@ -56,7 +56,7 @@ function Scheduler() {
 }));
 
   return (
-    <div className='w-[84.4%] absolute top-0 right-0 mt-[10rem]'>
+    <div className='w-[84.4%] z-[-1]absolute top-0 right-0 mt-[10rem]'>
         <FullCalendar
         plugins={[dayGridPlugin,  interactionPlugin]}
         initialView="dayGridMonth" 

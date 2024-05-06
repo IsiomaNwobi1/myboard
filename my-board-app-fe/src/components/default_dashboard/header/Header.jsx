@@ -1,14 +1,20 @@
-
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import List from '../../../assets/images/list-ul.png';
-import background from '../../../assets/images/Background.png';
+// import background from '../../../assets/images/Background.png';
 import UserNameIcon from './UserNameIcon';
 import sublist from '../../../assets/images/Sub List 1.png';
 import add from '../../../assets/images/add.png';
+import EditUserModal from '../editUser/EditUserModal';
 import Dot from '../../../assets/images/Dot.png';
 
 const Header = ({selectedListName, toggleMenuModal}) => {
-  const userName = localStorage.getItem('userName') || 'Guest'; // 'Guest' if no name is stored
+  const [isModalOpen, setModalOpen] = useState(false);
+  const toggleModal = () => setModalOpen(!isModalOpen);
+  const updateUser = (name, icon) => {
+    // Update user logic
+  };
+  const userName = useState(localStorage.getItem('userName') || 'Guest');  // Corrected usage of useState for userName
 
   return (
     <header>
@@ -20,7 +26,8 @@ const Header = ({selectedListName, toggleMenuModal}) => {
           </div>
           <div className='flex  gap-3 mr-[2rem]'>
             <h4 className=' mt-1.5 text-white font-lato text-xl  leading-tight'>Hey, {userName}</h4>
-            <button><UserNameIcon className='w-[34px] h-[34px]' /></button>
+            <button onClick={toggleModal}><UserNameIcon className='w-[34px] h-[34px]' fontSize='text-lg' /></button>
+            <EditUserModal isOpen={isModalOpen} toggleModal={toggleModal} updateUser={updateUser} />
           </div>
         </div>
         <div className='flex justify-between mt-12 pr-[4rem] '>
