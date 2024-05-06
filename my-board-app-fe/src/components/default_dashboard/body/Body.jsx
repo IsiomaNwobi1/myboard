@@ -43,7 +43,7 @@ const Body = ({ hideModal, tasks }) => {
             </button>
           </div>
         ))}
-        <div className="flex items-end flex-col ">
+        <div className="flex items-end flex-col fixed bottom-0 right-0 py-5">
           <button onClick={hideModal} className=" mr-[6.4rem]">
             <img src={image1} alt="" />
           </button>

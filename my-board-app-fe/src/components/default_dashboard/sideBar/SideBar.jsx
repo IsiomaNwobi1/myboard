@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import NewListModal from "./NewListModal";
 import Modal from "../../Modal";
@@ -30,6 +30,7 @@ const SideBar = ({ selectedListId, setSelectedListId, fetchTasks }) => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const userId = localStorage.getItem("userId");
   const accessToken = localStorage.getItem("token");
+  const modalRef = useRef();
 
   useEffect(() => {
     let mounted = true;
@@ -60,6 +61,20 @@ const SideBar = ({ selectedListId, setSelectedListId, fetchTasks }) => {
       mounted = false;
     };
   }, [userId, accessToken]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        setModalOpen(false);
+        setSelectedList(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const handleCreateTask = () => {
     if (selectedListId) {
@@ -131,7 +146,10 @@ const SideBar = ({ selectedListId, setSelectedListId, fetchTasks }) => {
                 <p className="text-white text-xl">{list.title}</p>
               </button>
               {selectedList && selectedList.id === list.id && (
-                <div className="absolute bg-white shadow-lg rounded-lg p-2 ml-[80px]">
+                <div
+                  className="absolute bg-white shadow-lg rounded-lg p-2 ml-[80px]"
+                  ref={modalRef}
+                >
                   <button onClick={ToggleFormModal}>Create Task</button>
                   <br />
                   <button onClick={() => setModalOpen(true)}>Edit List</button>
@@ -155,11 +173,11 @@ const SideBar = ({ selectedListId, setSelectedListId, fetchTasks }) => {
             <img src={Delete} alt="" className="w-[14px] h-[18px]" />
             <Link to="/dashboard">Delete List</Link>
           </div>
-          <div className='flex gap-2 mt-[0.75rem] ml-2'>
-            <img src={CalendarIcon} alt="" className='w-[20px] h-[22px]' />
-            <Link to='/scheduler'>Calendar</Link>
+          <div className="flex gap-2 mt-[0.75rem] ml-2">
+            <img src={CalendarIcon} alt="" className="w-[20px] h-[22px]" />
+            <Link to="/scheduler">Calendar</Link>
           </div>
-          <div className='flex gap-2 mt-[0.75rem] ml-2'>
+          <div className="flex gap-2 mt-[0.75rem] ml-2">
             <img src={Logout} alt="" />
             <Link to="#" onClick={handleLogout}>
               Logout
@@ -180,9 +198,7 @@ const SideBar = ({ selectedListId, setSelectedListId, fetchTasks }) => {
         />
       )}
       {showForm && (
-        <Modal
-          children={<Form className="z-50" hideModal={ToggleFormModal} />}
-        />
+        <Modal children={<Form className="z-50" hideModal={ToggleFormModal} />} />
       )}
       {showDeleteConfirmation && (
         <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-[#0000004d] bg-opacity-75 z-50">

@@ -105,7 +105,7 @@ const Form = ({ hideModal }) => {
                         value={selectedTaskListId}
                         onChange={(e) => {
                             // setSelectedTaskListId(e.target.value){
-                            setSelectedTaskListId(taskLists[e.target.selectedIndex - 1]?.id);
+                            setSelectedTaskListId(taskLists[e.target.selectedIndex]?.id);
                             }}
                         
                         className='border-l-0 border-r-0 border-t-0 w-[450px] h-[52px]'
@@ -167,11 +167,11 @@ const Form = ({ hideModal }) => {
                                     <input type="radio" className='form-radio text-blue-500' name="status" value="IN_PROGRESS" checked={taskStatus === 'IN_PROGRESS'} onChange={(e) => setTaskStatus(e.target.value)} />
                                     <span className='ml-2'>In Progress</span>
                                 </label>
-                            </div>;
+                            </div>
                         </div>
                     </div>
                     <div className='mt-[35px] pl-28'>
-                        <button className='rounded-[5px] w-[100px] h-[40px] text-[#175CD3] border border-blue-500 bg-white ml-[180px]'>Cancel</button>
+                        <button className='rounded-[5px] w-[100px] h-[40px] text-[#175CD3] border border-blue-500 bg-white ml-[180px]' onClick={hideModal}>Cancel</button>
                         <button className='rounded-[5px] w-[100px] h-[40px] text-white bg-[#175CD3] ml-2'>Save</button>
                     </div>
                 </div>
