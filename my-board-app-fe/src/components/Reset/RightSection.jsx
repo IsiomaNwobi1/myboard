@@ -2,7 +2,7 @@ import React, { useState , useEffect} from 'react';
 import Logo from '../../assets/images/my-board-logo.png';
 import { Link } from 'react-router-dom';
 import Icon from '../../assets/images/Icon.svg'
-import ApiQuery from '../../api-service';
+import ApiQueryWithoutToken from '../../api-service';
 
 const RightSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -33,7 +33,7 @@ const RightSection = () => {
     else{
       console.log(email);
       const queryParams=`email=${email}&newPassword=${password}&confirmPassword=${confirmPassword}`
-      ApiQuery.post("/auth/reset-forgot-password?" + queryParams)
+      ApiQueryWithoutToken.post("/auth/reset-forgot-password?" + queryParams)
       .then(response => {
         console.log(response.data);
         openModal();

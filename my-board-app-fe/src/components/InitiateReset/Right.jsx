@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Logo from '../../assets/images/my-board-logo.png';
-import ApiQuery from "../../api-service/index.js";
+import ApiQueryWithoutToken from "../../api-service/index.js";
 import Icon from '../../assets/images/Icon.svg'
 import { Link } from 'react-router-dom';
 
@@ -21,7 +21,7 @@ export const Right = () => {
     e.preventDefault();
     setIsLoading(true);
 
-      await ApiQuery.post('/auth/forgot-password-email?email=' + email)
+      await ApiQueryWithoutToken.post('/auth/forgot-password-email?email=' + email)
           .then(response => {
             console.log(response);
             setSuccessMessage(response.data.message);

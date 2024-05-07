@@ -9,7 +9,7 @@ import List from "../../../assets/images/list-ul.png";
 import Icon from "../../../assets/images/Icon.png";
 import Delete from "../../../assets/images/Delete.png";
 import Logout from "../../../assets/images/logout.png";
-import ApiQuery from "../../../api-service/index.js";
+import {ApiQuery} from "../../../api-service/index.js";
 import CalendarIcon from "../../../assets/images/icons8.png";
 
 const SideBar = ({ selectedListId, setSelectedListId, fetchTasks }) => {
