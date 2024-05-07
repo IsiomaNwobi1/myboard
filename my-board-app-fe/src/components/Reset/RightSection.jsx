@@ -76,7 +76,7 @@ const RightSection = () => {
             <div className="bg-white rounded-lg p-8 w-[544px] h-[320px]">
               <h2 className="text-xl mb-8 text-center text-[#175CD3] font-medium font-lato">Successful Password Reset!</h2>
                 <div className='flex items-center justify-center mb-8'><img src={Icon} alt=''/></div>
-              <p className='text-center text-[#667085]'>You will get an email confirmation at {email&&email}</p>
+              <p className='text-center text-[#667085]'></p>
               <Link to='/login'><div className='flex items-center justify-center'>
                 <button className="mt-6 buttoun w-full">
                     Return to Login
